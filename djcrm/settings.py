@@ -127,7 +127,7 @@ STATIC_URL = "static/"
 
 STATICFILES_DIRS = [BASE_DIR / "static"]
 
-STATIC_ROOT = "static_root"
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
@@ -145,3 +145,7 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 CRISPY_ALLOWED_TEMPLATE_PACK = "tailwind"
 CRISPY_TEMPLATE_PACK = "tailwind"
+
+CSRF_TRUSTED_ORIGINS = [
+   "https://crm-production-3f46.up.railway.app"
+]
