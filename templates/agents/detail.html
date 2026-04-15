@@ -3,7 +3,8 @@
 <section class="text-gray-600 body-font overflow-hidden">
   <div class="container px-5 py-24 mx-auto">
     <div class="lg:w-4/5 mx-auto flex flex-wrap">
-      <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+
+      <div class="lg:w-1/2 w-full  border border-indigo-200 p-4  rounded-md lg:pr-10 lg:py-6 mb-6 lg:mb-0">
         <h2 class="text-sm title-font text-gray-500 tracking-widest">Agent</h2>
         <h1 class="text-gray-900 text-3xl title-font font-medium mb-4">{{agent_detail.user.username}}</h1>
         <div class="flex mb-4">
@@ -21,17 +22,37 @@
           <span class="ml-auto text-gray-900">{{agent_detail.user.email}}</span>
         </div>
 
-        {% comment %} <div class="flex border-t border-gray-200 py-2">
-          <span class="text-gray-500">Agent</span>
-          <span class="ml-auto text-gray-900">{{agent_detail.agent}}</span>
-        </div> {% endcomment %}
+       
         
 
-        <button class=" w-full text-white text-center bg-indigo-500 border-0 py-1 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg mt-5"><a href="{% url 'agent-delete' agent_detail.id %}">Delete</a>
+        <button class=" w-full text-red-500 bg-red-50 border-0 py-1 px-6 focus:outline-none hover:bg-red-100 rounded text-lg mt-5"><a href="{% url 'agent-delete' agent_detail.id %}">Delete</a>
         
       </div>
-      <img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="https://dummyimage.com/400x400">
-    </div>
+
+      <div class="lg:w-1/2 w-full flex flex-col gap-4 lg:pl-10">
+  
+        <div class="bg-indigo-50 rounded-lg p-6">
+          <h3 class="text-sm text-indigo-400 tracking-widest uppercase mb-1">Assigned Leads</h3>
+          <p class="text-4xl font-medium text-indigo-600">{{agent_detail.lead_set.count}}</p>
+        </div>
+
+        <div class="bg-gray-50 rounded-lg p-6">
+          <h3 class="text-sm text-gray-400 tracking-widest uppercase mb-2">Organization</h3>
+          <p class="text-gray-900 font-medium">{{agent_detail.organization}}</p>
+        </div>
+
+        <div class="bg-gray-50 rounded-lg p-6">
+          <h3 class="text-sm text-gray-400 tracking-widest uppercase mb-3">Quick Actions</h3>
+          <a href="{% url 'leads-list' %}" class="block text-center bg-indigo-500 text-white py-2 rounded hover:bg-indigo-600 mb-2">
+            View All Leads
+          </a>
+          <a href="{% url 'agent-update' agent_detail.id %}" class="block text-center bg-gray-100 text-gray-600 py-2 rounded hover:bg-gray-200">
+            Edit Agent
+          </a>
+        </div>
+
+      </div>
+      
   </div>
 </section>
 
