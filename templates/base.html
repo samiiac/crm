@@ -1,19 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>CRM</title>
-</head>
-<body class="font-sans" style="font-family: 'Inter', sans-serif;">
+  </head>
+  <body
+    class="font-sans scroll-smooth"
+    style="font-family: &quot;Inter&quot;, sans-serif"
+  >
     {% include "navbar.html" %}
-    <div>
-     {% block content %}
-
-     {% endblock  %}
-    </div>
+    <div>{% block content %} {% endblock %}</div>
     {% include "scripts.html" %}
-</body>
+  </body>
 </html>
