@@ -146,6 +146,4 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 CRISPY_ALLOWED_TEMPLATE_PACK = "tailwind"
 CRISPY_TEMPLATE_PACK = "tailwind"
 
-CSRF_TRUSTED_ORIGINS = [
-   "https://crm-production-3f46.up.railway.app"
-]
+CSRF_TRUSTED_ORIGINS = ["https://crm-production-3f46.up.railway.app"]
